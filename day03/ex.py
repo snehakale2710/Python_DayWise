@@ -1,318 +1,148 @@
-# Q1. List Creation & Element Insertion
-
-numbers = []
-
-numbers.append(10)
-numbers.append(20)
-numbers.append(30)
-
-numbers.insert(1, 15)
-
-numbers.extend([40, 50])
-
-print(numbers)
+# 1. Print numbers from 1 to 10 using a for loop.
+for i in range(1, 11):
+    print(i)
 
 
-# Q2. Element Removal & Retrieval
-
-items = ["Python", "Java", "C++", "JavaScript", "Ruby"]
-
-items.remove("C++")
-last_item = items.pop()
-
-print(items)
-print(last_item)
+# 2. Print numbers from 1 to 100.
+for i in range(1, 101):
+    print(i)
 
 
-# Q3. Element Frequency & Index Lookup
-
-scores = [85, 92, 75, 92, 88, 92, 70]
-
-count_92 = scores.count(92)
-index_88 = scores.index(88)
-
-print("Count of 92:", count_92)
-print("Index of 88:", index_88)
+# 3. Print all even numbers between 1 and 50.
+for i in range(2, 51, 2):
+    print(i)
 
 
-# Q4. Sorting & Reversing
-
-marks = [67, 12, 89, 45, 95, 34]
-
-marks.sort()
-print("Ascending:", marks)
-
-marks.reverse()
-print("Descending:", marks)
+# 4. Print all odd numbers between 1 and 50.
+for i in range(1, 51, 2):
+    print(i)
 
 
-# Q5. List Slicing Challenge
-
-arr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-
-print(arr[:5])
-print(arr[-3:])
-print(arr[1:9:2])
-print(arr[::-1])
+# 5. Print numbers from 10 to 1 in reverse order.
+for i in range(10, 0, -1):
+    print(i)
 
 
-# Q6. Sum and Average of List Elements
+# 6. Print the multiplication table of a number entered by the user.
+num = int(input("Enter a number: "))
+for i in range(1, 11):
+    print(num, "x", i, "=", num * i)
 
-numbers = []
 
-for i in range(5):
-    num = int(input("Enter an integer: "))
-    numbers.append(num)
-
+# 7. Find the sum of numbers from 1 to 100.
 total = 0
-
-for num in numbers:
-    total += num
-
-average = total / len(numbers)
-
-print("Sum:", total)
-print("Average:", average)
+for i in range(1, 101):
+    total += i
+print(total)
 
 
-# Q7. Find Largest and Smallest Number
-
-def find_min_max(numbers):
-    maximum = numbers[0]
-    minimum = numbers[0]
-
-    for num in numbers:
-        if num > maximum:
-            maximum = num
-        if num < minimum:
-            minimum = num
-
-    return maximum, minimum
+# 8. Find the sum of all even numbers from 1 to 100.
+total = 0
+for i in range(2, 101, 2):
+    total += i
+print(total)
 
 
-numbers = [34, 12, 89, 5, 67]
-
-maximum, minimum = find_min_max(numbers)
-
-print("Max =", maximum)
-print("Min =", minimum)
-
-
-# Q8. Remove Duplicates (Preserve Order)
-
-numbers = [1, 3, 2, 3, 4, 1, 5, 2]
-
-unique_numbers = []
-
-for num in numbers:
-    if num not in unique_numbers:
-        unique_numbers.append(num)
-
-print(unique_numbers)
+# 9. Find the factorial of a number using a loop.
+num = int(input("Enter a number: "))
+factorial = 1
+for i in range(1, num + 1):
+    factorial *= i
+print(factorial)
 
 
-# Q9. Separate Even and Odd Numbers
-
-numbers = [10, 15, 22, 33, 40, 55, 60]
-
-even_list = []
-odd_list = []
-
-for num in numbers:
-    if num % 2 == 0:
-        even_list.append(num)
-    else:
-        odd_list.append(num)
-
-print("Even:", even_list)
-print("Odd:", odd_list)
+# 10. Count how many numbers are present between 1 and a user-entered number.
+num = int(input("Enter a number: "))
+count = 0
+for i in range(1, num + 1):
+    count += 1
+print(count)
 
 
-# Q10. Second Largest Element
-
-numbers = [10, 45, 20, 99, 80, 99]
-
-largest = float("-inf")
-second_largest = float("-inf")
-
-for num in numbers:
-    if num > largest:
-        second_largest = largest
-        largest = num
-    elif num > second_largest and num != largest:
-        second_largest = num
-
-print("Second Largest:", second_largest)
+# 11. Print numbers divisible by 5 between 1 and 100.
+for i in range(1, 101):
+    if i % 5 == 0:
+        print(i)
 
 
-# Q11. List Comprehension: Square Odds
-
-nums = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-
-squares = [num ** 2 for num in nums if num % 2 != 0]
-
-print(squares)
-
-
-# Q12. Rotate List Elements Left by K Positions
-
-def rotate_left(lst, k):
-    k = k % len(lst)
-    return lst[k:] + lst[:k]
-
-
-lst = [1, 2, 3, 4, 5]
-k = 2
-
-print(rotate_left(lst, k))
-
-
-# Q13. Merge Two Sorted Lists
-
-list1 = [1, 3, 5, 7]
-list2 = [2, 4, 6, 8, 10]
-
-merged = []
-
-i = 0
-j = 0
-
-while i < len(list1) and j < len(list2):
-    if list1[i] < list2[j]:
-        merged.append(list1[i])
-        i += 1
-    else:
-        merged.append(list2[j])
-        j += 1
-
-while i < len(list1):
-    merged.append(list1[i])
+# 12. Use a while loop to print numbers from 1 to 20.
+i = 1
+while i <= 20:
+    print(i)
     i += 1
 
-while j < len(list2):
-    merged.append(list2[j])
-    j += 1
 
-print("Merged Output:", merged)
-
-
-# Q14. Flatten a Nested List
-
-def flatten(nested_list):
-    result = []
-
-    for item in nested_list:
-        if isinstance(item, list):
-            result.extend(flatten(item))
-        else:
-            result.append(item)
-
-    return result
+# 13. Use a while loop to print even numbers from 2 to 20.
+i = 2
+while i <= 20:
+    print(i)
+    i += 2
 
 
-nested_list = [1, [2, 3], [4, [5, 6]], 7]
-
-print(flatten(nested_list))
-
-
-# Q15. Pair Sum Target
-
-def find_pairs(nums, target):
-    pairs = []
-    seen = set()
-
-    for num in nums:
-        complement = target - num
-
-        if complement in seen:
-            pair = (complement, num)
-            if pair not in pairs:
-                pairs.append(pair)
-
-        seen.add(num)
-
-    return pairs
+# 14. Create a program that keeps printing numbers and stops when the number becomes 5 using break.
+for i in range(1, 11):
+    if i == 5:
+        break
+    print(i)
 
 
-nums = [2, 4, 3, 5, 7, 8, 9]
-target = 7
-
-print("Pairs:", find_pairs(nums, target))
-
-
-# Q16. Longest Consecutive Subsequence
-
-def longest_consecutive(nums):
-    numbers = set(nums)
-    longest = 0
-
-    for num in numbers:
-        if num - 1 not in numbers:
-            current = num
-            length = 1
-
-            while current + 1 in numbers:
-                current += 1
-                length += 1
-
-            if length > longest:
-                longest = length
-
-    return longest
+# 15. Print numbers from 1 to 10 but skip 5 using continue.
+for i in range(1, 11):
+    if i == 5:
+        continue
+    print(i)
 
 
-numbers = [100, 4, 200, 1, 3, 2]
-
-print("Length:", longest_consecutive(numbers))
-
-
-# Q17. Group Anagrams
-
-def group_anagrams(words):
-    groups = {}
-
-    for word in words:
-        key = "".join(sorted(word))
-
-        if key not in groups:
-            groups[key] = []
-
-        groups[key].append(word)
-
-    return list(groups.values())
+# 16. Create a program to find the sum of the first N natural numbers.
+n = int(input("Enter N: "))
+total = 0
+for i in range(1, n + 1):
+    total += i
+print(total)
 
 
-words = ["eat", "tea", "tan", "ate", "nat", "bat"]
-
-print(group_anagrams(words))
-
-
-# Q18. Predict the Output (Shallow Copy vs Reference)
-
-a = [1, 2, [3, 4]]
-b = a.copy()
-
-b[0] = 99
-b[2][0] = 77
-
-print("a:", a)
-print("b:", b)
+# 17. Create a program to calculate the power of a number without using the ** operator.
+base = int(input("Enter base: "))
+power = int(input("Enter power: "))
+result = 1
+for i in range(power):
+    result *= base
+print(result)
 
 
-# Q19. Debugging Challenge (Modifying List While Iterating)
-
-numbers = [-5, -2, 3, -4, -1, 6, 8]
-
-numbers = [num for num in numbers if num >= 0]
-
-print(numbers)
+# 18. Print the first 10 multiples of 3.
+for i in range(1, 11):
+    print(3 * i)
 
 
-# Q20. Matrix Transposition using List Comprehension
+# 19. Check how many numbers between 1 and 100 are divisible by both 2 and 5.
+count = 0
+for i in range(1, 101):
+    if i % 2 == 0 and i % 5 == 0:
+        count += 1
+print(count)
 
-matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 
-transpose = [[matrix[row][col] for row in range(len(matrix))]
-             for col in range(len(matrix[0]))]
+# 20. Create a simple menu loop that repeats until the user enters 0.
+while True:
+    print("1. Add")
+    print("2. Subtract")
+    print("3. Multiply")
+    print("0. Exit")
+    choice = int(input("Enter your choice: "))
 
-print(transpose)
+    if choice == 0:
+        break
+
+    if choice in [1, 2, 3]:
+        a = int(input("Enter first number: "))
+        b = int(input("Enter second number: "))
+
+        if choice == 1:
+            print(a + b)
+        elif choice == 2:
+            print(a - b)
+        elif choice == 3:
+            print(a * b)
+    else:
+        print("Invalid choice")

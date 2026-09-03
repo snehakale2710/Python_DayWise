@@ -1,148 +1,96 @@
-# 1. Print numbers from 1 to 10 using a for loop.
-for i in range(1, 11):
-    print(i)
+# 1. Take a name from the user and print it in uppercase.
+name = input("Enter your name: ")
+print(name.upper())
 
+# 2. Take a name from the user and print it in lowercase.
+name = input("Enter your name: ")
+print(name.lower())
 
-# 2. Print numbers from 1 to 100.
-for i in range(1, 101):
-    print(i)
+# 3. Take a full name and print it in title case.
+name = input("Enter your full name: ")
+print(name.title())
 
+# 4. Find the length of a string entered by the user.
+text = input("Enter a string: ")
+print(len(text))
 
-# 3. Print all even numbers between 1 and 50.
-for i in range(2, 51, 2):
-    print(i)
+# 5. Print the first character of a string.
+text = input("Enter a string: ")
+print(text[0])
 
+# 6. Print the last character of a string.
+text = input("Enter a string: ")
+print(text[-1])
 
-# 4. Print all odd numbers between 1 and 50.
-for i in range(1, 51, 2):
-    print(i)
+# 7. Print the first three characters of a string using slicing.
+text = input("Enter a string: ")
+print(text[:3])
 
+# 8. Reverse a string using slicing.
+text = input("Enter a string: ")
+print(text[::-1])
 
-# 5. Print numbers from 10 to 1 in reverse order.
-for i in range(10, 0, -1):
-    print(i)
+# 9. Count how many times the letter 'a' appears in a string.
+text = input("Enter a string: ")
+print(text.lower().count("a"))
 
+# 10. Replace the word 'Python' with 'Java' in a sentence.
+sentence = input("Enter a sentence: ")
+print(sentence.replace("Python", "Java"))
 
-# 6. Print the multiplication table of a number entered by the user.
-num = int(input("Enter a number: "))
-for i in range(1, 11):
-    print(num, "x", i, "=", num * i)
+# 11. Remove extra spaces from the beginning and end of a string.
+text = input("Enter a string: ")
+print(text.strip())
 
+# 12. Check whether a given word exists inside a sentence.
+sentence = input("Enter a sentence: ")
+word = input("Enter a word: ")
+print(word in sentence)
 
-# 7. Find the sum of numbers from 1 to 100.
-total = 0
-for i in range(1, 101):
-    total += i
-print(total)
+# 13. Take first name and last name and create a full name.
+first_name = input("Enter first name: ")
+last_name = input("Enter last name: ")
+full_name = first_name + " " + last_name
+print(full_name)
 
+# 14. Use an f-string to display a student's name, age and city.
+name = input("Enter student name: ")
+age = input("Enter age: ")
+city = input("Enter city: ")
+print(f"Name: {name}, Age: {age}, City: {city}")
 
-# 8. Find the sum of all even numbers from 1 to 100.
-total = 0
-for i in range(2, 101, 2):
-    total += i
-print(total)
+# 15. Check whether a string is empty or not.
+text = input("Enter a string: ")
+if text == "":
+    print("String is empty")
+else:
+    print("String is not empty")
 
+# 16. Check whether a string starts with a specific letter.
+text = input("Enter a string: ")
+letter = input("Enter a letter: ")
+print(text.startswith(letter))
 
-# 9. Find the factorial of a number using a loop.
-num = int(input("Enter a number: "))
-factorial = 1
-for i in range(1, num + 1):
-    factorial *= i
-print(factorial)
+# 17. Check whether a string ends with '.com'.
+text = input("Enter a string: ")
+print(text.endswith(".com"))
 
-
-# 10. Count how many numbers are present between 1 and a user-entered number.
-num = int(input("Enter a number: "))
+# 18. Count the number of vowels in a string.
+text = input("Enter a string: ")
 count = 0
-for i in range(1, num + 1):
-    count += 1
-print(count)
 
-
-# 11. Print numbers divisible by 5 between 1 and 100.
-for i in range(1, 101):
-    if i % 5 == 0:
-        print(i)
-
-
-# 12. Use a while loop to print numbers from 1 to 20.
-i = 1
-while i <= 20:
-    print(i)
-    i += 1
-
-
-# 13. Use a while loop to print even numbers from 2 to 20.
-i = 2
-while i <= 20:
-    print(i)
-    i += 2
-
-
-# 14. Create a program that keeps printing numbers and stops when the number becomes 5 using break.
-for i in range(1, 11):
-    if i == 5:
-        break
-    print(i)
-
-
-# 15. Print numbers from 1 to 10 but skip 5 using continue.
-for i in range(1, 11):
-    if i == 5:
-        continue
-    print(i)
-
-
-# 16. Create a program to find the sum of the first N natural numbers.
-n = int(input("Enter N: "))
-total = 0
-for i in range(1, n + 1):
-    total += i
-print(total)
-
-
-# 17. Create a program to calculate the power of a number without using the ** operator.
-base = int(input("Enter base: "))
-power = int(input("Enter power: "))
-result = 1
-for i in range(power):
-    result *= base
-print(result)
-
-
-# 18. Print the first 10 multiples of 3.
-for i in range(1, 11):
-    print(3 * i)
-
-
-# 19. Check how many numbers between 1 and 100 are divisible by both 2 and 5.
-count = 0
-for i in range(1, 101):
-    if i % 2 == 0 and i % 5 == 0:
+for char in text.lower():
+    if char in "aeiou":
         count += 1
+
 print(count)
 
+# 19. Count the number of words in a sentence.
+sentence = input("Enter a sentence: ")
+words = sentence.split()
+print(len(words))
 
-# 20. Create a simple menu loop that repeats until the user enters 0.
-while True:
-    print("1. Add")
-    print("2. Subtract")
-    print("3. Multiply")
-    print("0. Exit")
-    choice = int(input("Enter your choice: "))
-
-    if choice == 0:
-        break
-
-    if choice in [1, 2, 3]:
-        a = int(input("Enter first number: "))
-        b = int(input("Enter second number: "))
-
-        if choice == 1:
-            print(a + b)
-        elif choice == 2:
-            print(a - b)
-        elif choice == 3:
-            print(a * b)
-    else:
-        print("Invalid choice")
+# 20. Create a program that takes an email address and displays the username part before '@'.
+email = input("Enter your email address: ")
+username = email.split("@")[0]
+print(username)

@@ -1,96 +1,83 @@
-# 1. Take a name from the user and print it in uppercase.
-name = input("Enter your name: ")
-print(name.upper())
+# Q1. Create a tuple and print it.
+fruits = ("apple", "banana", "mango")
+print(fruits)
 
-# 2. Take a name from the user and print it in lowercase.
-name = input("Enter your name: ")
-print(name.lower())
+# Q2. Print the first item from the tuple.
+fruits = ("apple", "banana", "mango")
+print(fruits[0])
 
-# 3. Take a full name and print it in title case.
-name = input("Enter your full name: ")
-print(name.title())
+# Q3. Print the last item from the tuple.
+fruits = ("apple", "banana", "mango")
+print(fruits[-1])
 
-# 4. Find the length of a string entered by the user.
-text = input("Enter a string: ")
-print(len(text))
+# Q4. Create a tuple with different types of values and print it.
+student = ("Sneha", 20, 77.5)
+print(student)
 
-# 5. Print the first character of a string.
-text = input("Enter a string: ")
-print(text[0])
+# Q5. Create a set and print it.
+numbers = {1, 2, 3, 4, 5}
+print(numbers)
 
-# 6. Print the last character of a string.
-text = input("Enter a string: ")
-print(text[-1])
+# Q6. Create a set with duplicate values and print it.
+numbers = {1, 2, 2, 3, 3, 4}
+print(numbers)
 
-# 7. Print the first three characters of a string using slicing.
-text = input("Enter a string: ")
-print(text[:3])
+# Q7. Add an item to a set.
+fruits = {"apple", "banana"}
+fruits.add("mango")
+print(fruits)
 
-# 8. Reverse a string using slicing.
-text = input("Enter a string: ")
-print(text[::-1])
+# Q8. Remove an item from a set.
+fruits = {"apple", "banana", "mango"}
+fruits.remove("banana")
+print(fruits)
 
-# 9. Count how many times the letter 'a' appears in a string.
-text = input("Enter a string: ")
-print(text.lower().count("a"))
+# Q9. Find the union of two sets.
+a = {1, 2, 3}
+b = {3, 4, 5}
+print(a | b)
 
-# 10. Replace the word 'Python' with 'Java' in a sentence.
-sentence = input("Enter a sentence: ")
-print(sentence.replace("Python", "Java"))
+# Q10. Find the common items in two sets.
+a = {1, 2, 3}
+b = {2, 3, 4}
+print(a & b)
 
-# 11. Remove extra spaces from the beginning and end of a string.
-text = input("Enter a string: ")
-print(text.strip())
+# Q11. Create a dictionary and print it.
+student = {
+    "name": "Sneha",
+    "age": 20,
+    "city": "Pune"
+}
+print(student)
 
-# 12. Check whether a given word exists inside a sentence.
-sentence = input("Enter a sentence: ")
-word = input("Enter a word: ")
-print(word in sentence)
+# Q12. Print a value from a dictionary.
+student = {
+    "name": "Sneha",
+    "age": 20
+}
+print(student["name"])
 
-# 13. Take first name and last name and create a full name.
-first_name = input("Enter first name: ")
-last_name = input("Enter last name: ")
-full_name = first_name + " " + last_name
-print(full_name)
+# Q13. Add a new item to a dictionary.
+student = {
+    "name": "Sneha",
+    "age": 20
+}
+student["course"] = "MCA"
+print(student)
 
-# 14. Use an f-string to display a student's name, age and city.
-name = input("Enter student name: ")
-age = input("Enter age: ")
-city = input("Enter city: ")
-print(f"Name: {name}, Age: {age}, City: {city}")
+# Q14. Change a value in a dictionary.
+student = {
+    "name": "Sneha",
+    "age": 20
+}
+student["age"] = 21
+print(student)
 
-# 15. Check whether a string is empty or not.
-text = input("Enter a string: ")
-if text == "":
-    print("String is empty")
-else:
-    print("String is not empty")
-
-# 16. Check whether a string starts with a specific letter.
-text = input("Enter a string: ")
-letter = input("Enter a letter: ")
-print(text.startswith(letter))
-
-# 17. Check whether a string ends with '.com'.
-text = input("Enter a string: ")
-print(text.endswith(".com"))
-
-# 18. Count the number of vowels in a string.
-text = input("Enter a string: ")
-count = 0
-
-for char in text.lower():
-    if char in "aeiou":
-        count += 1
-
-print(count)
-
-# 19. Count the number of words in a sentence.
-sentence = input("Enter a sentence: ")
-words = sentence.split()
-print(len(words))
-
-# 20. Create a program that takes an email address and displays the username part before '@'.
-email = input("Enter your email address: ")
-username = email.split("@")[0]
-print(username)
+# Q15. Print all keys and values from a dictionary.
+student = {
+    "name": "Sneha",
+    "age": 20,
+    "city": "Pune"
+}
+for key, value in student.items():
+    print(key, value)

@@ -1,83 +1,107 @@
-# Q1. Create a tuple and print it.
-fruits = ("apple", "banana", "mango")
-print(fruits)
+# 1. Function to print Hello Python
+def hello():
+    print("Hello Python")
 
-# Q2. Print the first item from the tuple.
-fruits = ("apple", "banana", "mango")
-print(fruits[0])
 
-# Q3. Print the last item from the tuple.
-fruits = ("apple", "banana", "mango")
-print(fruits[-1])
+# 2. Function that accepts a name
+def greet(name):
+    print("Hello", name)
 
-# Q4. Create a tuple with different types of values and print it.
-student = ("Sneha", 20, 77.5)
-print(student)
 
-# Q5. Create a set and print it.
-numbers = {1, 2, 3, 4, 5}
-print(numbers)
+# 3. Function to add two numbers
+def add(a, b):
+    return a + b
 
-# Q6. Create a set with duplicate values and print it.
-numbers = {1, 2, 2, 3, 3, 4}
-print(numbers)
 
-# Q7. Add an item to a set.
-fruits = {"apple", "banana"}
-fruits.add("mango")
-print(fruits)
+# 4. Functions for arithmetic operations
+def addition(a, b):
+    return a + b
 
-# Q8. Remove an item from a set.
-fruits = {"apple", "banana", "mango"}
-fruits.remove("banana")
-print(fruits)
 
-# Q9. Find the union of two sets.
-a = {1, 2, 3}
-b = {3, 4, 5}
-print(a | b)
+def subtraction(a, b):
+    return a - b
 
-# Q10. Find the common items in two sets.
-a = {1, 2, 3}
-b = {2, 3, 4}
-print(a & b)
 
-# Q11. Create a dictionary and print it.
-student = {
-    "name": "Sneha",
-    "age": 20,
-    "city": "Pune"
-}
-print(student)
+def multiplication(a, b):
+    return a * b
 
-# Q12. Print a value from a dictionary.
-student = {
-    "name": "Sneha",
-    "age": 20
-}
-print(student["name"])
 
-# Q13. Add a new item to a dictionary.
-student = {
-    "name": "Sneha",
-    "age": 20
-}
-student["course"] = "MCA"
-print(student)
+def division(a, b):
+    return a / b
 
-# Q14. Change a value in a dictionary.
-student = {
-    "name": "Sneha",
-    "age": 20
-}
-student["age"] = 21
-print(student)
 
-# Q15. Print all keys and values from a dictionary.
-student = {
-    "name": "Sneha",
-    "age": 20,
-    "city": "Pune"
-}
-for key, value in student.items():
-    print(key, value)
+# 5. Function to check even/odd
+def check_even_odd(num):
+    if num % 2 == 0:
+        return "Even"
+    else:
+        return "Odd"
+
+
+# 6. Function to check positive/negative/zero
+def check_number(num):
+    if num > 0:
+        return "Positive"
+    elif num < 0:
+        return "Negative"
+    else:
+        return "Zero"
+
+
+# 7. Function to calculate factorial
+def factorial(num):
+    fact = 1
+
+    for i in range(1, num + 1):
+        fact = fact * i
+
+    return fact
+
+
+# 8. Function to find largest of two numbers
+def largest(a, b):
+    if a > b:
+        return a
+    else:
+        return b
+
+
+# 9. Function to calculate student percentage
+def percentage(marks):
+    total = sum(marks)
+    return total / len(marks)
+
+
+# 10. Function that accepts a list and returns its sum
+def list_sum(numbers):
+    return sum(numbers)
+
+
+# ==========================
+# FUNCTION CALLS
+# ==========================
+
+hello()
+
+greet("Sneha")
+
+print("Sum of two numbers =", add(10, 20))
+
+print("Addition =", addition(20, 10))
+print("Subtraction =", subtraction(20, 10))
+print("Multiplication =", multiplication(20, 10))
+print("Division =", division(20, 10))
+
+print("7 is", check_even_odd(7))
+
+print("-5 is", check_number(-5))
+
+print("Factorial of 5 =", factorial(5))
+
+print("Largest =", largest(25, 40))
+
+marks = [80, 75, 90, 85, 70]
+print("Student Percentage =", percentage(marks), "%")
+
+numbers = [10, 20, 30, 40, 50]
+print("List Sum =", list_sum(numbers))
