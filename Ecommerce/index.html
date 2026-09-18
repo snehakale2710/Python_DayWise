@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>JS E-Commerce</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+
+        <div class="nav-left">
+
+            <div class="logo">
+                <a href="index.html">SHOP<span>NOW</span></a>
+            </div>
+
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="#products">Products</a>
+                <a href="#categories">Categories</a>
+                <a href="#offers">Offers</a>
+            </div>
+
+        </div>
+
+
+        <div class="nav-right">
+
+            <div class="search">
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search products"
+                >
+
+                <i class="fa-solid fa-search"></i>
+            </div>
+
+            <a href="login.html" class="nav-icon">
+                <i class="fa-regular fa-user"></i>
+            </a>
+
+            <a href="profile.html" class="nav-icon">
+                <i class="fa-regular fa-heart"></i>
+            </a>
+
+            <div class="nav-icon cart-icon" onclick="openCart()">
+
+                <i class="fa-solid fa-cart-shopping"></i>
+
+                <span id="cartCount">0</span>
+
+            </div>
+
+        </div>
+
+        <div class="menu-button" onclick="toggleMenu()">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+
+    </nav>
+
+
+    <!-- MOBILE MENU -->
+
+    <div class="mobile-menu" id="mobileMenu">
+
+        <a href="index.html">Home</a>
+        <a href="#products">Products</a>
+        <a href="#categories">Categories</a>
+        <a href="#offers">Offers</a>
+        <a href="login.html">Login</a>
+
+    </div>
+
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <p class="small-heading">
+                NEW COLLECTION
+            </p>
+
+            <h1>
+                Find Your
+                <span>Perfect Style</span>
+            </h1>
+
+            <p>
+                Discover the latest fashion and lifestyle
+                products at amazing prices.
+            </p>
+
+            <a href="#products" class="shop-button">
+                Shop Now
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- CATEGORIES -->
+
+    <section class="categories" id="categories">
+
+        <div class="section-heading">
+
+            <p>SHOP BY CATEGORY</p>
+
+            <h2>Explore Categories</h2>
+
+        </div>
+
+
+        <div class="category-container">
+
+            <div class="category-card">
+
+                <div class="category-image">
+                    <img src="images/product1.jpg" alt="Men">
+                </div>
+
+                <h3>Men</h3>
+
+                <button onclick="filterCategory('men')">
+                    Shop Now
+                </button>
+
+            </div>
+
+
+            <div class="category-card">
+
+                <div class="category-image">
+                    <img src="images/product2.jpg" alt="Women">
+                </div>
+
+                <h3>Women</h3>
+
+                <button onclick="filterCategory('women')">
+                    Shop Now
+                </button>
+
+            </div>
+
+
+            <div class="category-card">
+
+                <div class="category-image">
+                    <img src="images/product3.jpg" alt="Shoes">
+                </div>
+
+                <h3>Shoes</h3>
+
+                <button onclick="filterCategory('shoes')">
+                    Shop Now
+                </button>
+
+            </div>
+
+
+            <div class="category-card">
+
+                <div class="category-image">
+                    <img src="images/product4.jpg" alt="Accessories">
+                </div>
+
+                <h3>Accessories</h3>
+
+                <button onclick="filterCategory('accessories')">
+                    Shop Now
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- OFFER -->
+
+    <section class="offer" id="offers">
+
+        <div class="offer-content">
+
+            <p>LIMITED TIME OFFER</p>
+
+            <h2>
+                UP TO <span>50% OFF</span>
+            </h2>
+
+            <p>
+                Grab the best deals before they are gone.
+            </p>
+
+            <a href="#products" class="shop-button">
+                Shop Offers
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- PRODUCTS -->
+
+    <section class="products" id="products">
+
+        <div class="section-heading">
+
+            <p>OUR COLLECTION</p>
+
+            <h2>Featured Products</h2>
+
+        </div>
+
+
+        <div class="product-container" id="productContainer">
+
+        </div>
+
+    </section>
+
+
+    <!-- CART -->
+
+    <div class="cart-overlay" id="cartOverlay">
+
+        <div class="cart-box">
+
+            <div class="cart-header">
+
+                <h2>Your Cart</h2>
+
+                <button onclick="closeCart()">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+
+            </div>
+
+
+            <div id="cartItems" class="cart-items">
+
+            </div>
+
+
+            <div class="cart-footer">
+
+                <h3>
+                    Total:
+                    ₹<span id="cartTotal">0</span>
+                </h3>
+
+                <button onclick="checkout()" class="checkout-btn">
+                    Checkout
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- NEWSLETTER -->
+
+    <section class="newsletter">
+
+        <div>
+
+            <h2>
+                Subscribe To Our Newsletter
+            </h2>
+
+            <p>
+                Get updates about new products and offers.
+            </p>
+
+        </div>
+
+
+        <form id="newsletterForm">
+
+            <input
+                type="email"
+                placeholder="Enter your email"
+                required
+            >
+
+            <button type="submit">
+                Subscribe
+            </button>
+
+        </form>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="footer-container">
+
+            <div class="footer-column">
+
+                <h2>
+                    SHOP<span>NOW</span>
+                </h2>
+
+                <p>
+                    Your destination for fashion,
+                    lifestyle and everyday products.
+                </p>
+
+                <div class="social-icons">
+
+                    <a href="#">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+
+                    <a href="#">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+
+                    <a href="#">
+                        <i class="fa-brands fa-twitter"></i>
+                    </a>
+
+                    <a href="#">
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>Quick Links</h3>
+
+                <a href="index.html">Home</a>
+                <a href="#products">Products</a>
+                <a href="#categories">Categories</a>
+                <a href="#offers">Offers</a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>Customer Service</h3>
+
+                <a href="#">My Account</a>
+                <a href="#">Orders</a>
+                <a href="#">Shipping</a>
+                <a href="#">Returns</a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>Contact</h3>
+
+                <p>
+                    <i class="fa-solid fa-location-dot"></i>
+                    Pune, Maharashtra
+                </p>
+
+                <p>
+                    <i class="fa-solid fa-phone"></i>
+                    +91 98765 43210
+                </p>
+
+                <p>
+                    <i class="fa-solid fa-envelope"></i>
+                    support@shopnow.com
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="copyright">
+
+            <p>
+                © 2026 SHOPNOW. All Rights Reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <script src="js/navbar.js"></script>
+
+</body>
+
+</html>
