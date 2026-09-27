@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flask Day 01</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f7fa;
+            margin: 0;
+            padding: 30px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: #222;
+        }
+
+        h2 {
+            text-align: center;
+            color: #555;
+            margin-bottom: 30px;
+        }
+
+        .question {
+            background-color: white;
+            padding: 15px 20px;
+            margin-bottom: 12px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .question-title {
+            font-size: 16px;
+            color: #333;
+        }
+
+        .question-number {
+            font-weight: bold;
+            margin-right: 8px;
+        }
+
+        .btn {
+            background-color: #2563eb;
+            color: white;
+            text-decoration: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+        }
+
+        .btn:hover {
+            background-color: #1d4ed8;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>{{ app_name }}</h1>
+
+    <h2>Flask Day 01 - Assignment</h2>
+
+    {% for question in questions %}
+
+    <div class="question">
+
+        <div class="question-title">
+            <span class="question-number">
+                Q{{ question.number }}.
+            </span>
+
+            {{ question.title }}
+        </div>
+
+        <a class="btn" href="{{ question.url }}">
+            Open
+        </a>
+
+    </div>
+
+    {% endfor %}
+
+</div>
+
+</body>
+</html>
