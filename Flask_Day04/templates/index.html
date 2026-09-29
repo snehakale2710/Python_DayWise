@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flask Day 04</title>
+</head>
+<body>
+
+    <h1>Flask Day 04</h1>
+
+    <h2>Profile</h2>
+
+    {% if name %}
+        <p>Hello {{ name }}</p>
+    {% else %}
+        <p>Welcome to Flask</p>
+    {% endif %}
+
+    <h2>Login Form</h2>
+
+    <form method="POST" action="/login">
+
+        <input type="text" name="username" placeholder="Enter username">
+
+        <br><br>
+
+        <input type="password" name="password" placeholder="Enter password">
+
+        <br><br>
+
+        <button type="submit">Login</button>
+
+    </form>
+
+    {% if username %}
+        <h3>Login Details</h3>
+        <p>Username: {{ username }}</p>
+        <p>Password: {{ password }}</p>
+    {% endif %}
+
+</body>
+</html>
